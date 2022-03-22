@@ -19,7 +19,7 @@
 			],
 			"transformations": [
 				{
-					"name": "filter1"
+					"name": "facial"
 				}
 			],
 			"scriptLines": [
@@ -39,11 +39,12 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 filter(ERROR_FUNCTION('{key points}contains(\"facial\")')) ~> filter1",
-				"filter1 sink(allowSchemaDrift: true,",
+				"source1 filter(ERROR_FUNCTION('')) ~> facial",
+				"facial sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     saveOrder: 1) ~> sink1"
 			]
 		}
 	}
