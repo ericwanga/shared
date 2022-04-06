@@ -3,7 +3,18 @@
 	"properties": {
 		"type": "WranglingDataFlow",
 		"typeProperties": {
-			"sources": []
+			"sources": [
+				{
+					"name": "xlsx_procrastination",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~>  xlsx_procrastination",
+					"dataset": {
+						"referenceName": "xlsx_procrastination",
+						"type": "DatasetReference"
+					}
+				}
+			],
+			"script": "section Section1;\r\nshared xlsx_procrastination = let AdfDoc = AzureStorage.DataLakeContents(\"https://myunisaazstorage.dfs.core.windows.net/sourcefiles/procrastination/MATH_1065(18079)_logs - student data only.xlsx\"), Excel = Excel.Workbook(AdfDoc),ExcelSheet = Excel{[Item=\"MATH_1065(18079)_logs - student\",Kind=\"Sheet\"]}[Data], PromotedHeaders = Table.PromoteHeaders(ExcelSheet, [PromoteAllScalars = true]) in PromotedHeaders;\r\nshared UserQuery = let Source = #\"xlsx_procrastination\" in Source;\r\n",
+			"documentLocale": "en-us"
 		}
 	}
 }
