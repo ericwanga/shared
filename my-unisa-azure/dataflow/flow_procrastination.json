@@ -13,7 +13,11 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "aggregate1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          Time as string,",
@@ -28,7 +32,9 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     limit: 50,",
-				"     ignoreNoFilesFound: false) ~> source1"
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 aggregate(groupBy(event_context),",
+				"     event_context = iif(isNull(event_context), 'NA', event_context)) ~> aggregate1"
 			]
 		}
 	}
