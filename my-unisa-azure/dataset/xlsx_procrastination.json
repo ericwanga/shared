@@ -1,5 +1,5 @@
 {
-	"name": "csv_procrastination",
+	"name": "xlsx_procrastination",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
@@ -20,6 +20,39 @@
 			},
 			"firstRowAsHeader": true
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "Time",
+				"type": "String"
+			},
+			{
+				"name": "User full name",
+				"type": "String"
+			},
+			{
+				"name": "Student ID",
+				"type": "String"
+			},
+			{
+				"name": "affected_user",
+				"type": "String"
+			},
+			{
+				"name": "affected_user_idnumber",
+				"type": "String"
+			},
+			{
+				"name": "event_context",
+				"type": "String"
+			},
+			{
+				"name": "component",
+				"type": "String"
+			},
+			{
+				"name": "eventname",
+				"type": "String"
+			}
+		]
 	}
 }
