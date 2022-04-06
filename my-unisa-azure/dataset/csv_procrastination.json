@@ -1,0 +1,23 @@
+{
+	"name": "csv_procrastination",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "MATH_1065(18079)_logs - student data only.csv",
+				"folderPath": "procrastination",
+				"fileSystem": "sourcefiles"
+			}
+		},
+		"schema": []
+	}
+}
