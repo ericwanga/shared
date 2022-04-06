@@ -33,7 +33,7 @@
 				"     validateSchema: false,",
 				"     limit: 50,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 aggregate(groupBy(event_context),",
+				"source1 aggregate(groupBy(component),",
 				"     event_context = iif(isNull(event_context), 'NA', event_context)) ~> aggregate1"
 			]
 		}
