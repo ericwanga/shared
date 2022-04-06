@@ -1,0 +1,9 @@
+{
+	"name": "powerquery_procrastination",
+	"properties": {
+		"type": "WranglingDataFlow",
+		"typeProperties": {
+			"sources": []
+		}
+	}
+}
