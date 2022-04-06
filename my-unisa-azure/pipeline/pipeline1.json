@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Ingest",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -33,7 +33,7 @@
 				]
 			},
 			{
-				"name": "Notebook1",
+				"name": "Transform",
 				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
