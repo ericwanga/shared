@@ -11,12 +11,14 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
+			"sheetName": "MATH_1065(18079)_logs - student",
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "MATH_1065(18079)_logs - student data only.csv",
+				"fileName": "MATH_1065(18079)_logs - student data only.xlsx",
 				"folderPath": "procrastination",
 				"fileSystem": "sourcefiles"
-			}
+			},
+			"firstRowAsHeader": true
 		},
 		"schema": []
 	}
