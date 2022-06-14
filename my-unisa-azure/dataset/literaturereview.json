@@ -1,0 +1,69 @@
+{
+	"name": "literaturereview",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "literature summary",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "literature summary.xlsx",
+				"fileSystem": "literaturereview"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "No.",
+				"type": "String"
+			},
+			{
+				"name": "Title Author",
+				"type": "String"
+			},
+			{
+				"name": "key points",
+				"type": "String"
+			},
+			{
+				"name": "feature1",
+				"type": "String"
+			},
+			{
+				"name": "feature2",
+				"type": "String"
+			},
+			{
+				"name": "target label",
+				"type": "String"
+			},
+			{
+				"name": "methods",
+				"type": "String"
+			},
+			{
+				"name": "experiments",
+				"type": "String"
+			},
+			{
+				"name": "accuracy",
+				"type": "String"
+			},
+			{
+				"name": "other notes",
+				"type": "String"
+			},
+			{
+				"name": "limitations",
+				"type": "String"
+			}
+		]
+	}
+}

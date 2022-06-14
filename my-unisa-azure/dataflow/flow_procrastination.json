@@ -1,0 +1,41 @@
+{
+	"name": "flow_procrastination",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "xlsx_procrastination",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "aggregate1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Time as string,",
+				"          {User full name} as string,",
+				"          {Student ID} as string,",
+				"          affected_user as string,",
+				"          affected_user_idnumber as string,",
+				"          event_context as string,",
+				"          component as string,",
+				"          eventname as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     limit: 50,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 aggregate(groupBy(component),",
+				"     event_context = iif(isNull(event_context), 'NA', event_context)) ~> aggregate1"
+			]
+		}
+	}
+}
