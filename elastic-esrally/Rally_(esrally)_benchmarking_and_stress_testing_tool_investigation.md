@@ -6,7 +6,7 @@
 
 
 
- ![0](/sshots/Rally.png)
+ ![0](sshots/Rally.png)
 
  
 
